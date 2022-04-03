@@ -3,7 +3,10 @@ import { requests } from "../getDB/request";
 import React, { useState, useEffect } from 'react';
 import axios from '../getDB/axios';
 import { url } from "inspector";
+// スタイルシート
+import "../stylesheets/Banner.scss";
 
+// ？マークは必須のプロパティじゃないことを表す
 type movieProps = {
 	title?: string;
 	name?: string;
@@ -50,19 +53,18 @@ export const Banner = () => {
 				backgroundPosition: "center center",
 			}}
 		>
-			<div className="Banner-contents">
-				<h1 className="banner-title">
-					{movie?.title || movie?.name || movie?.original_name}
-				</h1>
-				<div className="Banner-buttons">
-					<button className="Banner-button">Play</button>
-					<button className="Banner-button">My List</button>
-				</div>
-
-				<h1 className="Banner-description">{truncate(movie?.overview, 150)}</h1>
+		<div className="Banner-contents">
+			<h1 className="banner-title">
+				{movie?.title || movie?.name || movie?.original_name}
+			</h1>
+			<div className="Banner-buttons">
+				<button className="Banner-button">Play</button>
+				<button className="Banner-button">My List</button>
 			</div>
+			<h1 className="Banner-description">{truncate(movie?.overview, 150)}</h1>
+		</div>
 
-			<div className="Banner-fadeBottom" />
+		<div className="Banner-fadeBottom" />
 		</header>
 	);
 }
