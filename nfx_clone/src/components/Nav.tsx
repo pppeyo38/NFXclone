@@ -25,6 +25,7 @@ export const Nav = (props: Props) => {
 	}, []);
 
 	return (
+		// クラス名がスクロール値によって変わる表記
 		<div className={`Nav ${show && "Nav-black"}`}>
 			<img
 				className='Nav-logo'
