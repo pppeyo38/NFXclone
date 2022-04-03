@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "../stylesheets/Nav.scss";
 
 type Props = {
 	className?: string;
